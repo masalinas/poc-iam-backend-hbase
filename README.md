@@ -22,6 +22,26 @@ http://localhost:16010
 
  Although it is simple to build hbase environment through docker, there is a problem that its host mapping directly uses the container ID. therefore, if our external java program needs to connect to hbase, we need to add the container ID to the host list of our machine
  
+Get the IP and container ID from these docker commands:
+ 
+ ```shell
+get container ID
+docker container ls  | grep hbase | awk '{print $1}'
+
+get container IP
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' hbase
+ ```
+
+From these container data add in the /etc/localhosts this entrance:
+  
+ ```shell
+ ...
+ 
+ # some hbase docker configuration
+172.17.0.3 docker 636544e887ee
+ ```s
+ 
+ 
 ## Create a table
 
 From endpoint createTable pass these attributes:
