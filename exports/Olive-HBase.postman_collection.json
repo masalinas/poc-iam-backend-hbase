@@ -20,7 +20,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8083/api/hbase/tables/test/colfamilies/my-family",
+					"raw": "http://localhost:8083/api/hbase/tables/products/colfamilies/defaullt",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,9 +30,9 @@
 						"api",
 						"hbase",
 						"tables",
-						"test",
+						"products",
 						"colfamilies",
-						"my-family"
+						"defaullt"
 					]
 				}
 			},
@@ -45,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"Product\": \"Apple\",\n \"Description\": \"Apple fruit\",\n \"price\": 8.5,\n \"active\": true\n}",
+					"raw": "{\n \"code\": \"Apple\",\n \"description\": \"Apple fruit\",\n \"price\": 8.5,\n \"active\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -53,7 +53,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8083/api/hbase/tables/test/colfamilies/my-family/rowkeys/key01",
+					"raw": "http://localhost:8083/api/hbase/tables/products/colfamilies/defaullt/rowkeys/P001",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -63,11 +63,35 @@
 						"api",
 						"hbase",
 						"tables",
-						"test",
+						"products",
 						"colfamilies",
-						"my-family",
+						"defaullt",
 						"rowkeys",
-						"key01"
+						"P001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteData",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/hbase/tables/products/rowkeys/P001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"hbase",
+						"tables",
+						"products",
+						"rowkeys",
+						"P001"
 					]
 				}
 			},
@@ -79,7 +103,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8083/api/hbase/tables/test",
+					"raw": "http://localhost:8083/api/hbase/tables/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,7 +113,7 @@
 						"api",
 						"hbase",
 						"tables",
-						"test"
+						"products"
 					]
 				}
 			},
