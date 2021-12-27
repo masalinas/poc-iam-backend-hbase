@@ -36,7 +36,7 @@ public class HbaseController {
 	
 	@RequestMapping(value = "/tables/{tableName}/colfamilies/{colFamily}/rowkeys/{rowKey}", method = RequestMethod.POST)
     public ResponseEntity<String> putData(@PathVariable("tableName") String tableName, @PathVariable("colFamily") String colFamily, 
-    					@PathVariable("rowKey") String rowKey, @RequestBody Map<String, String> data) throws Exception {
+    									  @PathVariable("rowKey") String rowKey, @RequestBody Map<String, String> data) throws Exception {
         log.info("Executing putData");
                     	
         hbaseService.putData(tableName, colFamily, rowKey, data);
